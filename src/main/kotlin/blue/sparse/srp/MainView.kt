@@ -40,7 +40,8 @@ class MainView : View("Source Resource Packer") {
 					left = vbox(alignment = Pos.CENTER) { label("Pack Order") }
 					right = hbox(alignment = Pos.CENTER) {
 						this.spacing = 5.0
-						button("Pack") {
+						button("Apply") {
+
 							setOnMouseClicked {
 								find<PackView>().openModal(stageStyle = StageStyle.UTILITY)
 							}
@@ -49,6 +50,7 @@ class MainView : View("Source Resource Packer") {
 						button("Refresh") {
 							setOnMouseClicked {
 								controller.refreshPackList()
+
 							}
 						}
 					}
@@ -61,10 +63,32 @@ class MainView : View("Source Resource Packer") {
 						graphic = borderpane {
 							val list = packListView!!
 							val str = it
-							this.left = label(str)
+							this.left = vbox(alignment = Pos.CENTER) {
+								hbox {
+									this.spacing = 5.0
+									checkbox {
+										this.isSelected = !controller.packExempt.contains(str)
+										this.selectedProperty().addListener { it ->
+											if (this.isSelected && controller.packExempt.contains(str)) {
+												controller.packExempt.remove(str)
+											} else if (!controller.packExempt.contains(str)) {
+												controller.packExempt.add(str)
+											}
+										}
+									}
+
+									var string = str
+									if (string.endsWith(".zip")) {
+										string = str.substring(0, str.length - 4)
+									}
+									label(string)
+								}
+							}
+
 							this.right = hbox(alignment = Pos.CENTER, spacing = 5.0) {
 
 								button("\uD83E\uDC15") {
+									hiddenWhen(controller.noMovementNeeded)
 									setOnMouseClicked {
 										list.selectionModel.select(str)
 										controller.move(list, -1)
@@ -72,6 +96,7 @@ class MainView : View("Source Resource Packer") {
 								}
 
 								button("\uD83E\uDC17") {
+									hiddenWhen(controller.noMovementNeeded)
 									setOnMouseClicked {
 										list.selectionModel.select(str)
 										controller.move(list, +1)
@@ -97,10 +122,18 @@ class MainView : View("Source Resource Packer") {
 class MainController : Controller() {
 
 	val selectedPackName = SimpleStringProperty()
+
 	val packList = SimpleListProperty<String>()
 	val packOrder = SimpleListProperty<String>()
+	val packExempt = SimpleListProperty<String>(FXCollections.observableArrayList())
+
+	val noMovementNeeded = SimpleBooleanProperty(true)
 
 	fun move(view: ListView<String>, dir: Int) {
+		if (view.items.size <= 1) {
+			return
+		}
+
 		val string = selectedPackName.get() ?: return
 		val model = view.selectionModel ?: return
 		val index = model.selectedIndex
@@ -113,6 +146,7 @@ class MainController : Controller() {
 	}
 
 	fun refreshPackList() {
+
 		val listFiles = SRPFiles.RESOURCE_PACKS.listFiles()
 		val list = mutableListOf<String>()
 		for (file in listFiles) {
@@ -123,6 +157,11 @@ class MainController : Controller() {
 
 		packList.set(FXCollections.observableArrayList(list))
 
+		if (packOrder.value == null) {
+			packOrder.set(FXCollections.observableArrayList(packList.filter { !packExempt.contains(it) }))
+		}
+
+		noMovementNeeded.set(list.size <= 1)
 	}
 
 }

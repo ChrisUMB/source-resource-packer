@@ -29,6 +29,10 @@ class PackView : Fragment("Packing...") {
 			controller.packDefault()
 
 			for (s in list) {
+				if (mainView.controller.packExempt.contains(s)) {
+					continue
+				}
+
 				controller.pack(s)
 			}
 		}.ui {

@@ -85,6 +85,30 @@ class SRPStylesheet : Stylesheet() {
 			this.borderColor += box(Color.rgb(33, 37, 43).darker().darker())
 		}
 
+		checkBox {
+			box {
+				this.backgroundColor += Color.rgb(33, 37, 43).brighter()
+			}
+
+			and(selected, indeterminate) {
+				box {
+					mark {
+						this.backgroundColor += Color.rgb(171, 178, 191)
+					}
+				}
+			}
+
+
+
+//			mark {
+//				this.baseColor = Color.rgb(255, 0, 0)
+//				this.accentColor = Color.rgb(255, 0, 0)
+//				and(selected) {
+//					this.baseColor = Color.rgb(255, 0, 0)
+//				}
+//			}
+		}
+
 		"#packListBox" {
 			this.backgroundColor += Color.rgb(33, 37, 43).desaturate()
 			this.borderColor += box(Color.rgb(33, 37, 43).darker())
