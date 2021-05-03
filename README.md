@@ -55,3 +55,5 @@ If you don't want to deal with converting VTFs to PNGs and PNGs to VTFs, you can
 
 
  - I plan to add support for more than just PNG -> VTF and VTF -> PNG. Eventually, I'd like this to support model conversion, and an easier to understand particle format.
+
+ - Current PNG -> VTF conversion does not support alpha, unfortunately, it only outputs to DXT1. DXT5 will be added very soon.
