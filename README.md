@@ -5,7 +5,10 @@ Source Resource Packer aims to provide a streamlined, easy to follow process for
 ### Installation
 1. Download the latest `.zip` archive from [releases](https://github.com/ChrisUMB/source-resource-packer/releases).
 2. Extract the contents into your Source game directory. For instance, Source Unpack for portal, the game directory is where `Portal.bat` and the `portal` folder are located. Unpack it alongside those files.
-3. Profit.
+3. Profit.  
+
+If you were to install this into Source Unpack for portal, it would look like this:
+![](assets/install.png)
 
 ### First Time Setup
 When you first start the application, it will extract all the default resources from the game's assets. This is important to understand because these will be the same resources you might reference when creating a resource pack, so this is best done on a clean install, or at least an install with clean assets. It will still work if you have modified assets, but those will become what SRP understands as the "default" ones. Mind you, **this can take quite a while if you have a slow hard drive,** but this only happens the first time you start SRP.
