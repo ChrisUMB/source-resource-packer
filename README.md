@@ -3,7 +3,7 @@
 Source Resource Packer aims to provide a streamlined, easy to follow process for asset swapping in Source games by providing automatic conversions and providing convenient, clean file structures to work with. **Currently only works with Unpacked variants of Source games, like Source Unpack for portal, but will support other games in the future.**
 
 ### Installation
-1. Download the latest zip archive from releases.
+1. Download the latest `.zip` archive from [releases](https://github.com/ChrisUMB/source-resource-packer/releases).
 2. Extract the contents into your Source game directory. For instance, Source Unpack for portal, the game directory is where `Portal.bat` and the `portal` folder are located. Unpack it alongside those files.
 3. Profit.
 
