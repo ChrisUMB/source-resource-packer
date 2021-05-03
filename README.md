@@ -36,7 +36,8 @@ The refresh button is relatively straight forward, but any time you add or remov
 Probably the most interesting part of this software is the ability to easily create a resource pack. A resource pack works by going through all the files in its folder, converting if necessary (png -> vtf, for example), and moving the file to the reflected location in the games actual assets.
 
 ### Example
-If you wanted to replace the portal gun texture which is located in:  `portal/materials/models/v_models/v_portalgun/v_portalgun.vtf`  
+If you wanted to replace the portal gun texture which is located in:  
+`portal/materials/models/v_models/v_portalgun/v_portalgun.vtf`  
 You would create that same folder structure in your resource pack folder, so:  
 `pack/portal/materials/models/v_models/v_portalgun/v_portalgun.png`  
 Yes, you can use a PNG instead of a VTF. It will automatically be converted to VTF for you when packing. For more examples of how you might structure a resource pack, look at the ones provided when you downloaded.
