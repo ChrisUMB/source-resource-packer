@@ -4,7 +4,7 @@ Source Resource Packer aims to provide a streamlined, easy to follow process for
 
 ### Installation
 1. Download the latest zip archive from releases.
-2. Extract the contents into your Source game directory.
+2. Extract the contents into your Source game directory. For instance, Source Unpack for portal, the game directory is where `Portal.bat` and the `portal` folder are located. Unpack it alongside those files.
 3. Profit.
 
 ### First Time Setup
