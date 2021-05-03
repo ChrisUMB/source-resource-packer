@@ -43,7 +43,7 @@ You would create that same folder structure in your resource pack folder, so:
 Yes, you can use a PNG instead of a VTF. It will automatically be converted to VTF for you when packing. For more examples of how you might structure a resource pack, look at the ones provided when you downloaded.
 
 ### Getting Assets to Modify
-**Note**: do not modify anything in the asset cache unless you 100% know what you're doing and why. It's never necessary, unless you broke it somehow in the first place. No touchy.  
+**Note**: do not modify anything in the asset cache unless you 100% know what you're doing and why. It's never necessary, unless you broke it somehow in the first place. No touchy. Copy it from here and move it to your resource pack, but do not ever modify the files in `srp/resources` directly.  
 
 If you don't want to deal with converting VTFs to PNGs and PNGs to VTFs, you can use the asset cache to find the PNG files that make up the VTFs. Just navigate to `srp/resources` and navigate to the asset you want. There is a backup VTF as well as PNG in there that you can use, but you should only need the PNG.  
 
