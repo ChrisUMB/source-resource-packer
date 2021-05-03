@@ -10,7 +10,7 @@ import java.lang.Integer.max
 import kotlin.math.min
 
 
-class MainView : View("Source Resource Packer") {
+class MainView : View("ReSource Packer") {
 
 	val controller by inject<MainController>()
 
@@ -147,7 +147,7 @@ class MainController : Controller() {
 
 	fun refreshPackList() {
 
-		val listFiles = SRPFiles.RESOURCE_PACKS.listFiles()
+		val listFiles = RSPFiles.RESOURCE_PACKS.listFiles()
 		val list = mutableListOf<String>()
 		for (file in listFiles) {
 			if (file.isDirectory || file.extension == "zip") {

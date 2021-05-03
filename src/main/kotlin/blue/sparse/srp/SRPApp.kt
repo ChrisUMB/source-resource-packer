@@ -12,7 +12,7 @@ class SRPApp : App(NoPrimaryViewSpecified::class, SRPStylesheet::class) {
 
 	override val primaryView: KClass<out UIComponent>
 		get() {
-			if (!SRPFiles.DATA.exists()) {
+			if (!RSPFiles.DATA.exists()) {
 				return SetupView::class
 			}
 

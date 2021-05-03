@@ -84,7 +84,7 @@ class PackController : Controller() {
 			step.value = "Packing default textures..."
 		}
 
-		SRPPacker.packDefaultResources { name, progress ->
+		RSPPacker.packDefaultResources { name, progress ->
 			Platform.runLater {
 				packingProgress.value = progress
 				assetName.value = name
@@ -97,9 +97,9 @@ class PackController : Controller() {
 			step.value = "Packing \"${name}\"..."
 		}
 
-		val f = File(SRPFiles.RESOURCE_PACKS, name)
+		val f = File(RSPFiles.RESOURCE_PACKS, name)
 		println("Packing $name")
-		SRPPacker.pack(f) { name, progress ->
+		RSPPacker.pack(f) { name, progress ->
 			Platform.runLater {
 				packingProgress.value = progress
 				assetName.value = "Asset \"$name\""

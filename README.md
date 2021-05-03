@@ -1,6 +1,6 @@
 ![Pretend there's an image here.](assets/icon.png) 
-# Source Resource Packer
-Source Resource Packer aims to provide a streamlined, easy to follow process for asset swapping in Source games by providing automatic conversions and providing convenient, clean file structures to work with. **Currently only works with Unpacked variants of Source games, like Source Unpack for portal, but will support other games in the future.**
+# ReSource Packer
+ReSource Packer aims to provide a streamlined, easy to follow process for asset swapping in Source games by providing automatic conversions and providing convenient, clean file structures to work with. **Currently only works with Unpacked variants of Source games, like Source Unpack for portal, but will support other games in the future.**
 
 ### Installation
 1. Download the latest `.zip` archive from [releases](https://github.com/ChrisUMB/source-resource-packer/releases).
@@ -11,11 +11,11 @@ If you were to install this into Source Unpack for portal, it would look like th
 ![](assets/install.png)
 
 ### First Time Setup
-When you first start the application, it will extract all the default resources from the game's assets. This is important to understand because these will be the same resources you might reference when creating a resource pack, so this is best done on a clean install, or at least an install with clean assets. It will still work if you have modified assets, but those will become what SRP understands as the "default" ones. Mind you, **this can take quite a while if you have a slow hard drive,** but this only happens the first time you start SRP.
+When you first start the application, it will extract all the default resources from the game's assets. This is important to understand because these will be the same resources you might reference when creating a resource pack, so this is best done on a clean install, or at least an install with clean assets. It will still work if you have modified assets, but those will become what RSP understands as the "default" ones. Mind you, **this can take quite a while if you have a slow hard drive,** but this only happens the first time you start RSP.
 
 ### First Impression
 ![Pretend there's an image here.](assets/first-impression.png)  
-When you first install SRP, you'll be greeted with this screen. By default, you won't have a lot going on, however after the first time setup has completed running, you'll have a few new folders in your game directory: `resourcepacks` and `srp/resources`. The `resourcepacks` folder is where you'll place folders or zip files of resource packs to be packed into the assets using SRP. As you can see, I've provided you a couple to start with: `Inverted Cube Pack` and `Void Pack`. You don't have to use these, they're just for demonstration purposes of both how to apply resource packs and the file structure that resource packs follow.
+When you first install RSP, you'll be greeted with this screen. By default, you won't have a lot going on, however after the first time setup has completed running, you'll have a few new folders in your game directory: `resourcepacks` and `srp/resources`. The `resourcepacks` folder is where you'll place folders or zip files of resource packs to be packed into the assets using RSP. As you can see, I've provided you a couple to start with: `Inverted Cube Pack` and `Void Pack`. You don't have to use these, they're just for demonstration purposes of both how to apply resource packs and the file structure that resource packs follow.
 
 ### Sorting
 The order that your resource packs are in matters. It will apply them from top to bottom, where default resources are always first. This is important because if you have two resource packs that change the same files, the resource pack that comes second will inherently have "priority" and overwrite that file. Try not to have resource packs with conflict, but if it happens, this is how you try your best to mitigate it. Use the up and down arrow to the right of the resource pack entry to modify it's position in the list. Remember; they're applied TOP to BOTTOM.
@@ -32,7 +32,7 @@ Unless the resource pack has 4k images or giant models or something, this should
 ![Pretend there's an image here.](assets/packing-finished.png)
 
 ### Refreshing the List
-The refresh button is relatively straight forward, but any time you add or remove a resource from the actual `resourcepacks` directory, you'll want to hit that refresh button so SRP see's the change. It will try its best to maintain order and toggled resource packs as well, and just add the new ones as additional resource packs to your list.
+The refresh button is relatively straight forward, but any time you add or remove a resource from the actual `resourcepacks` directory, you'll want to hit that refresh button so RSP see's the change. It will try its best to maintain order and toggled resource packs as well, and just add the new ones as additional resource packs to your list.
 
 ## Resource Pack Creation
 

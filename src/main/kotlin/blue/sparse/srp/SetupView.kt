@@ -8,7 +8,7 @@ import javafx.scene.control.Label
 import javafx.scene.control.ProgressBar
 import tornadofx.*
 
-class SetupView : View("Source Resource Packer") {
+class SetupView : View("ReSource Packer") {
 
 	private val controller: SetupController by inject()
 
@@ -60,14 +60,14 @@ class SetupController : Controller() {
 	val assetName = SimpleStringProperty("")
 
 	fun extractResources() {
-		SRP.extractDefaultResources { name, progress ->
+		ReSourcePacker.extractDefaultResources { name, progress ->
 			Platform.runLater {
 				extractionProgress.value = progress
 				assetName.value = "Asset \"$name\""
 			}
 		}
 
-		SRPFiles.makeDirectories()
+		RSPFiles.makeDirectories()
 	}
 }
 

@@ -3,9 +3,9 @@ package blue.sparse.srp;
 import java.io.File;
 import java.util.List;
 
-public final class SRPFiles {
+public final class RSPFiles {
 
-	private SRPFiles() {
+	private RSPFiles() {
 	}
 
 	public static final File WORKING_DIR = new File(System.getProperty("user.dir"));

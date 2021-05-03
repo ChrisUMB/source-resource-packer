@@ -32,7 +32,7 @@ dependencies {
 jar {
     manifest {
         attributes(
-                'Main-Class': 'blue.sparse.srp.SRP'
+                'Main-Class': 'blue.sparse.srp.ReSourcePacker'
         )
     }
 }

@@ -15,9 +15,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public final class SRPPacker {
+public final class RSPPacker {
 
-	private SRPPacker() {
+	private RSPPacker() {
 	}
 
 //	public static void pack() throws IOException {
@@ -38,9 +38,9 @@ public final class SRPPacker {
 
 	public static void packDefaultResources(ResourceProgress progress) throws IOException {
 		System.out.println("Packing default resources...");
-		File dir = SRPFiles.WORKING_DIR;
-		File defaultResources = SRPFiles.DEFAULT_RESOURCES;
-		List<String> assetExtensions = new ArrayList<>(SRPFiles.ASSET_EXTENSIONS_LIST);
+		File dir = RSPFiles.WORKING_DIR;
+		File defaultResources = RSPFiles.DEFAULT_RESOURCES;
+		List<String> assetExtensions = new ArrayList<>(RSPFiles.ASSET_EXTENSIONS_LIST);
 
 		List<Path> paths = Files.walk(defaultResources.toPath()).filter(path -> {
 			File file = path.toFile();
@@ -98,7 +98,7 @@ public final class SRPPacker {
 	//named something wrong.
 	public static void pack(File pack, ResourceProgress progress) throws IOException {
 
-		File dir = SRPFiles.WORKING_DIR;
+		File dir = RSPFiles.WORKING_DIR;
 
 		if (!pack.isDirectory() && !pack.getName().endsWith(".zip")) {
 			return;
@@ -159,7 +159,7 @@ public final class SRPPacker {
 					texture.setReflectivity(new Vector3f(1f));
 					File out = new File(dir, assetName + ".vtf");
 
-					if (out.exists() && SRPConfig.MAKE_BACKUPS) {
+					if (out.exists() && RSPConfig.MAKE_BACKUPS) {
 						File copy = new File(out.getAbsolutePath() + ".bak");
 						if (!copy.exists()) {
 							Files.copy(out.toPath(), copy.toPath(), StandardCopyOption.REPLACE_EXISTING);

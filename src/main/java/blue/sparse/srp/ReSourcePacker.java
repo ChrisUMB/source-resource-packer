@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
 
 import static javafx.application.Application.launch;
 
-public final class SRP {
+public final class ReSourcePacker {
 
 	//TODO:
 	/*
@@ -43,16 +43,16 @@ public final class SRP {
 	}
 
 	public static void extractDefaultResources(ResourceProgress progress) {
-		File dir = SRPFiles.WORKING_DIR;
+		File dir = RSPFiles.WORKING_DIR;
 		String dirPath = dir.getAbsolutePath();
 
 		try {
-			List<String> extensions = SRPFiles.ASSET_EXTENSIONS_LIST;
+			List<String> extensions = RSPFiles.ASSET_EXTENSIONS_LIST;
 
 			List<Path> assets = Files.walk(dir.toPath()).filter(it -> {
 				String fullPath = it.toString();
 
-				if (fullPath.startsWith(SRPFiles.DATA.getAbsolutePath())) {
+				if (fullPath.startsWith(RSPFiles.DATA.getAbsolutePath())) {
 					return false;
 				}
 
@@ -80,13 +80,13 @@ public final class SRP {
 
 				progress.apply(assetName, (double) processCount / (double) totalFiles);
 
-				File out = new File(SRPFiles.DEFAULT_RESOURCES, assetName);
+				File out = new File(RSPFiles.DEFAULT_RESOURCES, assetName);
 				out.getParentFile().mkdirs();
 				try {
 					if (extension.equalsIgnoreCase("vtf")) {
 						try {
 							ValveTexture texture = ValveTexture.load(file);
-							File pngOut = new File(SRPFiles.DEFAULT_RESOURCES, assetName.replace(".vtf", ".png"));
+							File pngOut = new File(RSPFiles.DEFAULT_RESOURCES, assetName.replace(".vtf", ".png"));
 							texture.export("PNG", pngOut);
 						} catch (Throwable e) {
 							System.out.println("Failed to export " + assetName);
